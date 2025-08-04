@@ -56,9 +56,14 @@ class TempStore:
 
 	def check_for_saves(self):
 		# checks for existence of save files in saves directory
+		
+		if not os.path.exists('saves'):
+			os.makedirs('saves')
+		
 		if not os.listdir('saves'):
 			return False
-		return True
+		else:
+			return True
 
 	def count_used_slots(self):
 		# returns number of save files in saves directory
